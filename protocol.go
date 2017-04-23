@@ -96,10 +96,6 @@ func (p *Conn) Close() error {
 }
 
 func (p *Conn) LocalAddr() net.Addr {
-	return p.conn.LocalAddr()
-}
-
-func (p *Conn) DstAddr() net.Addr {
 	p.checkPrefixOnce()
 	return p.dstAddr
 }
